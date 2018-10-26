@@ -1,0 +1,73 @@
+.day_time_schedule {
+  background-color: #ddd;
+  padding: 50px;
+}
+
+.date_space {
+  height: 50px;
+}
+
+.time_space {
+  width: 50px;
+  display: inline-block;
+}
+
+.schedule_area {
+  height: 800px;
+  background-color: #fdfdfd;
+  position: relative;
+  display: inline-block;
+}
+
+.hour_row {
+  position: absolute;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.hour_box {
+  width: 50px;
+  padding-top: 23px;
+  background-color: #fdfdfd;
+  height: 100%;
+  position: relative;
+  left: -50px;
+  text-align: center;
+}
+
+.day {
+  width: 300px;
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+.day_date {
+  position: absolute;
+  width: 100%;
+  background-color: #adccff;
+  height: 50px;
+  top: -51px;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.day_booking {
+  background-color: #7ca3e2;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: table;
+}
+
+.day_booking:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  border: 1px solid gray;
+}
+
+.day_booking_content {
+  display: table-cell;
+  vertical-align: middle;
+}

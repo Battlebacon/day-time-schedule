@@ -1,0 +1,27 @@
+<template>
+  <require from="./utc-to-date-value-converter"></require>
+  <require from="./utc-to-time-value-converter"></require>
+  <require from="./day-time-schedule.css"></require>
+
+  <div class="day_time_schedule">
+    <div class="date_space"></div>
+    <div class="time_space"></div>
+    <div class="schedule_area">
+      <div class="hour_row" repeat.for="i of (dayEnd-dayStart)/HOURSIZE" css="top: ${((HOURSIZE*i)/(dayEnd-dayStart))*100}%; height: ${(HOURSIZE/(dayEnd-dayStart))*100}%;">
+        <div class="hour_box">
+          ${i+7}:00
+        </div>
+      </div>
+      <div class="day" repeat.for="day of days">
+        <div class="day_date">
+          ${day.bookings[0].startTime | utcToDate}
+        </div>
+        <div class="day_booking" click.delegate="bookingClicked({booking: booking})" repeat.for="booking of day.bookings" css="top: ${((booking.startTime-dayStart) / (dayEnd-dayStart))*100}%; height: ${((booking.endTime-booking.startTime) / (dayEnd-dayStart))*100}%;">
+          <div class="day_booking_content">${booking.startTime | utcToTime} - ${booking.endTime | utcToTime}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!--Typ göra ett omslutande element som fixar dayStart och dayEnd och gör ett grid av det.-->

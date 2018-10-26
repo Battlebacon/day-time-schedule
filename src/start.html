@@ -1,0 +1,8 @@
+<template>
+  <require from="./day-time-schedule/day-time-schedule"></require>
+  <day-time-schedule 
+  day-start.bind="DAYSTART" 
+  day-end.bind="DAYEND" 
+  days.bind="days"
+  booking-clicked.call="doStuff(booking)"></day-time-schedule>
+</template>
